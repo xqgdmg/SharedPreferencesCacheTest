@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvAddValue;
     private TextView tvRemoveValue;
     private TextView tvShowValue;
+    private TextView tvClearValue;
     private int count;
 
     @Override
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         tvAddValue = (TextView) findViewById(R.id.tvAddValue);
         tvRemoveValue = (TextView) findViewById(R.id.tvRemoveValue);
         tvShowValue = (TextView) findViewById(R.id.tvShowValue);
+        tvClearValue = (TextView) findViewById(R.id.tvClearValue);
     }
 
     private void initListener() {
@@ -42,11 +44,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 删除旧的值
+        // 删除旧的值，使用这个键值都会被删除
         tvRemoveValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 spUtil.removeSharedKey("chris");
+                tvShowValue.setText("当前sp的值（点击刷新）== " + spUtil.getSharedString("chris"));
+                count = 0;// 重置count
+            }
+        });
+
+        // 使用clear方法删除，使用这个键值都会被删除
+        tvClearValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                spUtil.clearSp();
                 tvShowValue.setText("当前sp的值（点击刷新）== " + spUtil.getSharedString("chris"));
                 count = 0;// 重置count
             }

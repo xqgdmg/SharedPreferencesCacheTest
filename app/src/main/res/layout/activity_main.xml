@@ -23,7 +23,16 @@
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="移除sp的值"/>
+        android:text="移除sp的值，删除该key的value"/>
+
+    <TextView
+        android:id="@+id/tvClearValue"
+        android:gravity="center"
+        android:background="#550ff000"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="移除sp的值，使用clear删除"/>
 
     <TextView
         android:id="@+id/tvShowValue"

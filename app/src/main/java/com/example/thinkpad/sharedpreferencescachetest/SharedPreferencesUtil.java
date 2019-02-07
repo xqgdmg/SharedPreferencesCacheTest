@@ -104,4 +104,11 @@ public class SharedPreferencesUtil<T> {
         sp.edit().remove(MD5Util.string2MD5(key)).commit();
     }
 
+    /*
+     * 这个清除的方法
+     */
+    public void clearSp(){
+        sp.edit().clear().commit();
+    }
+
 }
