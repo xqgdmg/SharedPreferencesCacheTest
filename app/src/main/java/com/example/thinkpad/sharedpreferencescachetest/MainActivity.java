@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spUtil = new SharedPreferencesUtil(getApplicationContext());// 会不会是这个context中有缓存
+        spUtil = new SharedPreferencesUtil(getApplicationContext()); // 会不会是这个context中有缓存，好像不是
 
         initView();
         initListener();
