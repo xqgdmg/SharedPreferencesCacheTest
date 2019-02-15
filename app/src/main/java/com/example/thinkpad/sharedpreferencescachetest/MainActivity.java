@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
         tvAddValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                spUtil.setSharedString("chris","count"+ count++);
-                tvShowValue.setText("当前sp的值（点击刷新）== " + spUtil.getSharedString("chris"));
+                spUtil.setSharedString("chris1","count1"+ count++);
+                spUtil.setSharedString("chris2","count2"+ count++);
+                tvShowValue.setText("当前sp的值（点击刷新）chris1== " + spUtil.getSharedString("chris1")+ ",chris2==" + spUtil.getSharedString("chris2"));
             }
         });
 
@@ -48,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         tvRemoveValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                spUtil.removeSharedKey("chris");
-                tvShowValue.setText("当前sp的值（点击刷新）== " + spUtil.getSharedString("chris"));
+                spUtil.removeSharedKey("chris1");
+//                spUtil.removeSharedKey("chris2");
+                tvShowValue.setText("当前sp的值（点击刷新）chris1== " + spUtil.getSharedString("chris1")+ ",chris2==" + spUtil.getSharedString("chris2"));
                 count = 0;// 重置count
             }
         });
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 spUtil.clearSp();
-                tvShowValue.setText("当前sp的值（点击刷新）== " + spUtil.getSharedString("chris"));
+                tvShowValue.setText("当前sp的值（点击刷新）chris1== " + spUtil.getSharedString("chris1")+ ",chris2==" + spUtil.getSharedString("chris2"));
                 count = 0;// 重置count
             }
         });
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         tvShowValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvShowValue.setText("当前sp的值（点击刷新）== " + spUtil.getSharedString("chris"));
+                tvShowValue.setText("当前sp的值（点击刷新）chris1== " + spUtil.getSharedString("chris1")+ ",chris2==" + spUtil.getSharedString("chris2"));
             }
         });
 
